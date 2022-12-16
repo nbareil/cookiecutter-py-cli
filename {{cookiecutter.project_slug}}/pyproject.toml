@@ -3,11 +3,11 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "{{cookiecutter.repo_name}}"
+name = "{{cookiecutter.project_name}}"
 version = "0.0.1"
 dependencies = [
     "click",
 ]
 
 [project.scripts]
-til = "{{cookiecutter.repo_name|replace("-", "_")}}:cli"
+til = "{{cookiecutter.project_slug}}:cli"
