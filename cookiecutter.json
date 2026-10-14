@@ -1,4 +1,16 @@
 {
-      "project_name": "Dummy project name",
-      "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"
+    "project_name": "Python CLI",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
+    "__module_import": "{{ cookiecutter.project_slug.replace('-', '_') }}",
+    "entry_point": "{{ cookiecutter.project_slug }}",
+    "project_description": "",
+    "author_name": "Nicolas Bareil",
+    "author_email": "nico@chdir.org",
+    "version": "0.0.1",
+    "__prompts__": {
+        "project_name": "Human-readable project name",
+        "project_slug": "Directory and distribution name",
+        "entry_point": "Installed command name",
+        "project_description": "One-line description"
+    }
 }
