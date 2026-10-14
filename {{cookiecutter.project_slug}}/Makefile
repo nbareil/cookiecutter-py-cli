@@ -1,11 +1,13 @@
-.PHONY: dev run format lint test audit build
+.PHONY: dev{% if cookiecutter.repo_type == "CLI" %} run{% endif %} format lint test audit build
 
 dev:
 	uv sync
 	uv run prek install
+{%- if cookiecutter.repo_type == "CLI" %}
 
 run:
 	uv run {{ cookiecutter.entry_point }} $(ARGS)
+{%- endif %}
 
 format:
 	uv run ruff format

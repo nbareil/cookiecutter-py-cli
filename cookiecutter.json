@@ -1,8 +1,9 @@
 {
-    "project_name": "Python CLI",
+    "project_name": "Python Project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
     "__module_import": "{{ cookiecutter.project_slug.replace('-', '_') }}",
-    "entry_point": "{{ cookiecutter.project_slug }}",
+    "repo_type": ["CLI", "library"],
+    "entry_point": "{{ cookiecutter.project_slug if cookiecutter.repo_type == 'CLI' else '' }}",
     "project_description": "",
     "author_name": "Nicolas Bareil",
     "author_email": "nico@chdir.org",
@@ -10,7 +11,8 @@
     "__prompts__": {
         "project_name": "Human-readable project name",
         "project_slug": "Directory and distribution name",
-        "entry_point": "Installed command name",
+        "repo_type": "Project type",
+        "entry_point": "Installed command name (CLI only)",
         "project_description": "One-line description"
     }
 }

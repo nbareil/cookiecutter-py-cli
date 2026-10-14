@@ -7,10 +7,14 @@ authors = [
     { name = "{{ cookiecutter.author_name }}", email = "{{ cookiecutter.author_email }}" },
 ]
 requires-python = ">=3.11"
+{%- if cookiecutter.repo_type == "CLI" %}
 dependencies = ["click>=8.1"]
 
 [project.scripts]
 {{ cookiecutter.entry_point }} = "{{ cookiecutter.__module_import }}._cli:main"
+{%- else %}
+dependencies = []
+{%- endif %}
 
 [build-system]
 requires = ["uv_build>=0.12,<0.13"]
